@@ -1,0 +1,122 @@
+/*----------------
+main color : rgb(145, 202, 252)
+
+bg-color : rgb(217, 236, 253)
+
+
+--------------------------*/
+
+
+*{
+    padding: 0;
+    margin: 0;
+    color: rgb(77, 76, 76);
+}
+
+.section-form{
+    background-color: aliceblue;
+    border-radius: 10px;
+}
+.disclaimer{
+    color: red;
+    font-size: 120%;
+}
+
+/*------------------------------------------*/
+/*---------------INPUT STYLE----------------------*/
+/*------------------------------------------*/
+.input-style{
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    font-size: 130%;
+    background-color: rgb(217, 236, 253);
+    border: none;
+    transition: background-color,0.2s;
+}
+.input-style:hover{
+    background-color:rgb(197, 224, 249) ;
+}
+.input-style:focus{
+    outline: none;
+}
+/*------------------------------------------*/
+/*---------------HEAD STYLE----------------------*/
+/*------------------------------------------*/
+h1{
+    opacity: 90%;
+}
+.head-description{
+    background-color: rgb(145, 202, 252);
+    opacity: 68%;
+    color: black;
+    border-radius: 10px;
+    padding: 20px;
+}
+/*------------------------------------------*/
+/*---------------RADIO STYLE----------------------*/
+/*------------------------------------------*/
+.label-radio,.label-checkbox{
+    font-size: 110%;
+    font-weight: bold;
+    padding: 10px;
+    background-color: rgb(217, 236, 253);
+    border-radius: 10px; 
+    margin-right: 10px;
+}
+input[type="radio"],input[type="checkbox"]{
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    /* background-image: linear-gradient(180,rgb(47, 47, 145),rgb(151, 151, 217)); */
+}
+/*------------------------------------------*/
+/*---------------DROPDOWN STYLE----------------------*/
+/*------------------------------------------*/
+#area-select{
+    background-color: rgb(217, 236, 253) ;
+    border: none;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    padding: 10px;
+    font-size: 120%;
+}
+#area-select:focus{
+    outline: none;
+}
+/*------------------------------------------*/
+/*---------------BUTTON STYLE----------------------*/
+/*------------------------------------------*/
+
+#editbtn,#dltbtn{
+    padding: 5px;
+    border: none;
+    background-image: linear-gradient(180deg,red,rgb(185, 19, 19));
+    border-radius: 10px;
+    color: aliceblue;
+    transition: background-image,0.2s;
+}
+#editbtn:hover,
+#dltbtn:hover{
+    background-image: linear-gradient(180deg,rgb(171, 5, 5),red);
+}
+.Btn{
+    background-color:rgb(145, 202, 252) ;
+    border: none;
+    box-shadow: 2px 3px 5px rgb(134, 195, 249);
+}
+
+/*------------------------------------------*/
+/*---------------TABLE STYLE----------------------*/
+/*------------------------------------------*/
+table{
+    background-color:rgb(217, 236, 253) ;
+    border-radius: 5px;
+}
+thead{
+    background-color: rgb(145, 202, 252);
+}
+th,td{
+    padding: 10px;
+}
