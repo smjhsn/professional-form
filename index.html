@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"/>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section class="header">
+        <img id="reg-img" src="icons8-add-user-male-64.png" >
+        <h1>Register Here</h1>
+        <div class="header-container">
+            <div class="container">
+                <div class="row name-field">
+                    <div class="col mx-4">
+                        <div class="row"><label for="userId">User Id</label></div>
+                        <div class="row mt-2">
+                            <input type="text" class="" id="userId" name="userId" placeholder="User Id">
+                        </div>
+                    </div>
+                    <div class="col mx-3">
+                        <div class="row"><label for="name">User Name</label></div>
+                        <div class="row mt-2">
+                            <input type="text" class="" id="userName" name="name" placeholder="User Name">
+                        </div>
+                    </div>
+                    <div class="col mx-4">
+                        <div class="row"><label for="">Mobile No</label></div>
+                        <div class="row mt-2">
+                            <input type="text" class="" id="mobile" name="mobile" placeholder="User Mobile">
+                        </div>
+                    </div>
+                </div>
+                <div class="row email-field mt-3">
+                    <div class="col mx-4">
+                        <div class="row"><label for="email">User Email</label></div>
+                        <div class="row mt-2">
+                            <input type="email" class="" id="email" name="email" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="col mx-3">
+                        <div class="row"><label for="country">Country</label></div>
+                        <div class="row mt-2">
+                            <input type="text" class="" id="country" name="country" placeholder="Native Country">
+                        </div>
+                    </div>
+                    <div class="col mx-4">
+                        <div class="row"><label for="">Gender</label></div>
+                        <div class="row mt-2">
+                            <select name="gender" id="gender">
+                                <option value="" disabled selected>Select</option>
+                                <option value="Male" id="male">Male</option>
+                                <option value="Female" id="female">Female</option>
+                                <option value="Others" id="others">Others</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row address-field mt-3">
+                    <div class="col mx-4">
+                        <div class="row"><label for="address">Address</label></div>
+                        <div class="row mt-2">
+                            <input type="text" class="" id="address" name="address" placeholder="Address">
+                        </div>
+                    </div>
+                    <div class="col-4 mx-3">
+                        <div class="row"><label for="pincode">Pincode</label></div>
+                        <div class="row mt-2">
+                            <input type="text" class="" id="pincode" name="pincode" placeholder="Pincode">
+                        </div>
+                    </div>
+                </div>
+                <div class="row education-field mt-3">
+                    <div class="col mx-4">
+                        <div class="row"><label for="college">College</label></div>
+                        <div class="row mt-2">
+                            <input type="text" class="" id="college" name="college" placeholder="College Name">
+                        </div>
+                    </div>
+                    <div class="col mx-3">
+                        <div class="row"><label for="">Degree</label></div>
+                        <div class="row mt-2">
+                            <select name="degree" id="degree">
+                                <option value="" disabled selected>Select</option>
+                                <option value="BE" id="be">B.E</option>
+                                <option value="BSc" id="bsc">Bsc</option>
+                                <option value="Others" id="others">Others</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col mx-4">
+                        <div class="row"><label for="score">Score</label></div>
+                        <div class="row mt-2">
+                            <input type="text" class="" id="score" name="score" placeholder="CGPA 0f 10/ percentage">
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="row job-field mt-3 justify-content-evenly">
+                    <div class="col-4 mx-4">
+                        <div class="row"><label for="position">Position</label></div>
+                        <div class="row mt-2">
+                            <div class="col">
+                                <label for="development" class="radio-lab">Development</label>
+                                <input type="radio" id="development" name="position" value="Development"/>
+                            </div>
+                            <div class="col">
+                                <label for="testing" class="radio-lab">Testing</label>
+                                <input type="radio"  id="testing" name="position" value="Testing"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 mx-4">
+                        <div class="row"><label for="skills">Skill</label></div>
+                        <div class="row mt-2">
+                            <input type="text" class="" id="skills" name="skills" placeholder="Skills....">
+                        </div>
+                    </div>
+                </div>
+                <div class="row declare-field text-center mt-4">
+                    <div class="col mx-4">
+                            <input type="checkbox" id="checkbox" name="check" onclick="submit(this)">
+                            <label for="checkbox">I Accept the Terms  & Conditions</label>
+                    </div>
+                </div>
+                <div class="row justify-content-center mt-3">
+                    <div class="col-2">
+                        <button class="btn btn-danger" id="submit-btn" onclick="registerdetails()" disabled>Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="table-sec">
+        <h2 class="text-center">Table Act as Data Base</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>User Id</th>
+                    <th>User Name</th>
+                    <th>Mobile</th>
+                    <th>Email</th>
+                    <th>Country</th>
+                    <th>Gender</th>
+                    <th>Address</th>
+                    <th>Pincode</th>
+                    <th>College</th>
+                    <th>Degree</th>
+                    <th>Score</th>
+                    <th>Position</th>
+                    <th>Skills</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+    
+            </tbody>
+        </table>
+    </section>
+    
+
+    <script src="index.js"></script>
+  </body>
+</html>
