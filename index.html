@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="row justify-content-center mt-5">User Details Form</h1>
+    </div>
+    <div class="container mt-3">
+        <div class="row justify-content-center">
+            <div class="col head-description text-center">
+                <h4>Enter Your User Details To Register With Us.!!!</h4>
+            </div>
+        </div>
+    </div>
+    <section class="container section-form">
+        <div class="userDetails-1-field">
+            <div class="row">
+                <div class="col mt-4">
+                    <div class="row text-center">
+                        <h4>User Id</h4>
+                    </div>
+                    <div class="row mx-3 mt-3">
+                        <input class="input-style" type="text" name="userId" id="userId" placeholder="User Id"  />
+                    </div>
+                </div>
+                <div class="col mt-4">
+                    <div class="row text-center">
+                        <h4>First Name</h4>
+                    </div>
+                    <div class="row mx-3 mt-3">
+                        <input class="input-style" type="text" name="firstName" id="firstName" placeholder="First Name"  />
+                    </div>
+                </div>
+                <div class="col mt-4">
+                    <div class="row text-center">
+                        <h4>Last Name</h4>
+                    </div>
+                    <div class="row mx-3 mt-3">
+                        <input class="input-style" type="text" name="lastName" id="lastName" placeholder="Last Name"  />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="userDetails-2-field">
+            <div class="row">
+                <div class="col mt-4">
+                    <div class="row text-center">
+                        <h4>Email Address</h4>
+                    </div>
+                    <div class="row mx-3 mt-3">
+                        <input class="input-style" type="email" name="email" id="email" placeholder="Email Address"  />
+                    </div>
+                </div>
+                <div class="col mt-4">
+                    <div class="row text-center">
+                        <h4>Country</h4>
+                    </div>
+                    <div class="row mx-3 mt-3">
+                        <input class="input-style" type="text" name="country" id="country" placeholder="Country"  />
+                    </div>
+                </div>
+                <div class="col mt-4">
+                    <div class="row text-center">
+                        <h4>Mobile</h4>
+                    </div>
+                    <div class="row mx-3 mt-3">
+                        <input class="input-style" type="text" name="mobile" id="mobile" placeholder="Mobile"  />
+                    </div>
+                </div>
+            </div>
+        </div>    
+        <div class="address-field mt-4">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col text-center"><h4>Address</h4></div>
+                </div>
+            </div>
+            <div class="container mt-4">
+                <div class="row justify-content-center">
+                    <input class="col input-style mx-2" type="text" name="city" id="city" placeholder="City" />                
+                    <input class="col input-style mx-2" type="text" name="state" id="state" placeholder="State" />
+                    <input class="col input-style mx-2 " type="text" name="pincode" id="pincode" placeholder="Pincode" />                
+                </div>
+            </div>
+        </div>
+        <div class="gender-field">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col text-center mt-4"><h4>Gender</h4></div>
+                </div>
+            </div>
+            <div class="container mt-4">
+                <div class="row justify-content-evenly">
+                    <div class="col text-end">
+                        <label class="label-radio" for="male">Male</label>
+                        <input class="radio" type="radio" name="gender" value="Male" id="male" />                
+                    </div>
+                    <div class="col col-lg-2 text-center">
+                        <label class="label-radio" for="female">Female</label>
+                        <input class="radio" type="radio" name="gender" value="Female" id="female" />                
+                    </div>
+                    <div class="col text-start">
+                        <label class="label-radio" for="other">Others</label>
+                        <input class="radio" type="radio" name="gender" value="Others" id="others" />                
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container mt-4">
+            <div class="row justify-content-center">
+                <div class="col head-description text-center">
+                    <h4>Education</h4>
+                </div>
+            </div>
+        </div>
+        <div class="userDetails-address-field">
+            <div class="row">
+                <div class="col mt-4">
+                    <div class="row text-center">
+                        <h4>College</h4>
+                    </div>
+                    <div class="row mx-3 mt-3">
+                        <input class="input-style" type="text" name="college" id="college" placeholder="College completed"  />
+                    </div>
+                </div>
+                <div class="col mt-4">
+                    <div class="row text-center">
+                        <h4>Qualification</h4>
+                    </div>
+                    <div class="row mx-3 mt-3">
+                        <input class="input-style" type="text" name="degree" id="degree" placeholder="B.E/B.sc ..etc.."  />
+                    </div>
+                </div>
+                <div class="col mt-4">
+                    <div class="row text-center">
+                        <h4>Accademics Score</h4>
+                    </div>
+                    <div class="row mx-3 mt-3">
+                        <input class="input-style" type="text" name="percentage" id="percentage" placeholder="CGPA of 10 /Percentage of 100%"  />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container mt-4">
+            <div class="row justify-content-center">
+                <div class="col head-description text-center">
+                    <h4>Career</h4>
+                </div>
+            </div>
+        </div>
+        <div class="jobDetails-field">
+            <div class="row">
+                <div class="col mt-4">
+                    <div class="row text-center">
+                        <h4>Job Area</h4>
+                    </div>
+                    <div class="row mx-3 mt-3">
+                        <select name="area" id="area-select">
+                            <option disabled selected>Select</option>
+                            <option value="Technical" id="technical">Technical</option>
+                            <option value="Non-Technical" id="nontechnical">Non Technical</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col mt-4">
+                    <div class="row text-center">
+                        <h4>Job Position</h4>
+                    </div>
+                    <div class="row mx-3 mt-3">
+                        <input class="input-style" type="text" name="position" id="position" placeholder="Prefered position"  />
+                    </div>
+                </div>
+                <div class="col mt-4">
+                    <div class="row text-center">
+                        <h4>Technical Skills</h4>
+                    </div>
+                    <div class="row mx-3 mt-3">
+                        <input class="input-style" type="text" name="skills" id="skills" placeholder="Skills You Have"  />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="declaration row mt-5 justify-content-end">
+            <input class="col-1 text-end" type="checkbox" name="check" id="check" onclick="accepted(this)"/>
+            <div class="col-lg-7 col text-start"><label for="check">I have read the Terms & conditions.</label></div>
+        </div>
+        <div class="form-button-field row mt-2">
+            <div class="col text-center">
+                <button class="btn btn-primary" id="submitBtn" onclick="userFormDetails()" disabled>Submit</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-table">
+        <div class="container">
+            <div class="row justify-content-center">
+                        <table class="table-hover text-center mt-5">
+                            <thead>
+                                <tr>
+                                    <th>User Id</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Email</th>
+                                    <th>Country</th>
+                                    <th>Mobile No</th>
+                                    <th>Gender</th>
+                                    <th>Address</th>
+                                    <th>College</th>
+                                    <th>Degree</th>
+                                    <th>Percentage</th>
+                                    <th>Job Area</th>
+                                    <th>Job Position</th>
+                                    <th>Technical Skills</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>
+                                </tr>
+                        </thead>
+                        <tbody id="tbody">
+                            
+                        </tbody>
+                    </table>
+                
+            </div>
+        </div>
+    </section>
+    
+
+
+
+
+
+
+
+
+    <script src="index.js"></script>
+</body>
+</html>
