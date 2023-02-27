@@ -1,0 +1,334 @@
+var myArray = []; //declaring array
+var getUserDetailsString = window.localStorage.getItem("userDetails");// getting the local storage details
+window.onload = function(){
+    if(getUserDetailsString == null || getUserDetailsString == undefined || getUserDetailsString == ""){
+        myArray = []; //setting array empty if no user detailos found in local storage
+    }else{
+        myArray = JSON.parse(getUserDetailsString) // setting array to countinue with existing local stoarge datas
+    }
+    loadTable() // calling the loadTable function to load the table 
+}
+//function to load the table
+function loadTable(){
+    var tbody = document.getElementById("tbody")
+    tbody.innerHTML = "";
+    myArray.forEach(object =>{
+        tbody.insertAdjacentHTML("beforeend",
+        '<tr><td>'+object.name+'</td><td>'+object.password+'</td><td>'+object.mobile+'</td><td>'+object.email+'</td>'+
+        '<td>'+object.country+'</td><td>'+object.gender+'</td><td>'+object.address+'</td><td>'+object.pincode+'</td>'+
+        '<td>'+object.college+'</td><td>'+object.degree+'</td><td>'+object.score+'</td><td>'+object.position+'</td>'+
+        '<td>'+object.skills+'</td>'+
+        '<td><button class="edit" onclick="edit('+object.userId+')">Edit</button></td>'+
+        '<td><button class="delete" onclick="del('+object.userId+')">Del</button></td></tr>')
+    })
+}
+//declaring the variables for selected fields
+var userName = document.getElementById("userName");
+var userId = document.getElementById("password");
+var mobile = document.getElementById("mobile");
+var email = document.getElementById("email");
+var country = document.getElementById("country");
+var gender = document.getElementById("gender");
+var address = document.getElementById("address");
+var pincode = document.getElementById("pincode");
+var college = document.getElementById("college");
+var degree = document.getElementById("degree");
+var score = document.getElementById("score");
+var position;
+var development = document.getElementById("development");
+var testing = document.getElementById("testing");
+var skills = document.getElementById("skills");
+var checkbox = document.getElementById("checkbox");
+var password = document.getElementById("password");
+//number field for mobile number and pincode
+mobile.addEventListener("keypress",function(event){
+    if(isNaN(event.key)){
+        event.preventDefault();
+    }
+});
+pincode.addEventListener("keypress",function(event){
+    if(isNaN(event.key)){
+        event.preventDefault();
+    }
+});
+
+//--------------------------------------------------------------------------------
+//create function for submit button to load register details in stoarge and table
+//--------------------------------------------------------------------------------
+function registerdetails(){
+    var maxUserId = myArray.find(a=>Math.max(userId));
+    console.log(maxUserId);
+    var checkdeatils = myArray.find(a=>a.userId == userId.value);
+    if(checkdeatils == null || checkdeatils == undefined){
+        var isValidDate = inputField();
+        if(isValidDate == false){
+            return false;
+        }
+        //creatig the object and store the values
+        try{
+            var myObject = {
+                name : userName.value,
+                password : password.value,
+                mobile : mobile.value,
+                email : email.value,
+                country : country.value,
+                gender : gender.value,
+                address : address.value,
+                pincode : pincode.value,
+                college : college.value,
+                degree : degree.value,
+                score : score.value,
+                position : position(), //position function assigned
+                skills : skills.value,
+            }
+            myArray.push(myObject); //push the obj into array
+        }catch(error){
+            alert(error.message)
+        }
+    
+    }else{
+        
+        myArray.forEach(obj =>{
+            if(obj.userId == userId.value){
+                obj.userName = userName.value;
+                obj.password = password.value;
+                obj.mobile = mobile.value;
+                obj.email = email.value;
+                obj.country = country.value;
+                obj.gender = gender.value;
+                obj.address = address.value;
+                obj.pincode = pincode.value;
+                obj.college = college.value;
+                obj.degree = degree.value;
+                obj.score = score.value;
+                obj.position = position();
+                obj.skills = skills.value;
+                obj.password = password.value;
+            }
+        });
+    }
+    
+    //store the details in loaclstorage
+    var arrayToString = JSON.stringify(myArray);
+    window.localStorage.setItem("userDetails",arrayToString);
+
+    //get the localstorage details and assing that to myArray and load the table
+    var getString = window.localStorage.getItem("userDetails");
+    var stringToArray = JSON.parse(getString);
+    myArray = stringToArray;
+
+
+    loadTable() // calling the loadTable function to load the table
+    //remove the values from input field after storedd in the table
+        
+        userName.value = "";
+        password.value = "";
+        mobile.value = "";
+        email.value = "";
+        country.value = "";
+        gender.value = "";
+        address.value = "";
+        pincode.value = "";
+        college.value = "";
+        degree.value = "";
+        score.value = "";
+        position.value ="";
+        development.checked = "";
+        testing.checked = "";
+        skills.value = "";
+        checkbox.checked = "";
+}
+//-------------------------------------------------------------
+//To submit the selected radio value 
+//-------------------------------------------------------------
+function position(){
+    if(development.checked){
+        return development.value;
+    }else if(testing.checked){
+        return testing.value;
+    }else{
+        throw new Error("Position is Not selected")
+    }
+}
+//---------------------------------------------------
+//checkbox to enable button
+//-------------------------------------------------
+function submit(click){
+    if(click.checked){
+        document.getElementById("submit-btn").disabled = false; 
+    }else{
+        document.getElementById("submit-btn").disabled = true; 
+    }
+}
+//-----------------------------------------------------
+//function to edit the table
+//---------------------------------------------------
+function edit(datas){
+    var editObject = myArray.find(a=>a.userId == datas)
+    document.getElementById("userName").value  = editObject.name ;
+    document.getElementById("password").value = editObject.password;
+    document.getElementById("mobile").value = editObject.mobile ; 
+    document.getElementById("email").value = editObject.email ;
+    document.getElementById("country").value = editObject.country; 
+    document.getElementById("gender").value = editObject.gender;
+    document.getElementById("address").value = editObject.address;
+    document.getElementById("pincode").value = editObject.pincode;
+    document.getElementById("college").value = editObject.college;
+    document.getElementById("degree").value = editObject.degree;
+    document.getElementById("score").value = editObject.score;
+    if(editObject.position == "Development"){
+        document.getElementById("development").checked = true;
+    }else if(editObject.position == "Testing"){
+        document.getElementById("testing").checked = true;
+    }
+    document.getElementById("skills").value = editObject.skills;
+}
+//-----------------------------------------------------
+//function to delete the table
+//---------------------------------------------------
+function del(deleteData){
+// to delete the row instantly without refresh
+    var td = event.target.parentNode; 
+      var tr = td.parentNode; // the row to be removed
+      tr.parentNode.removeChild(tr);
+//to delete the local storage data 
+    var getLocalstorage = window.localStorage.getItem("userDetails");
+    var inToArray = JSON.parse(getLocalstorage);
+    var findvalue = inToArray.find(a=>a.userId == deleteData);
+    inToArray.splice(findvalue,1);
+    var inToString = JSON.stringify(inToArray);
+    window.localStorage.setItem("userDetails",inToString);
+}
+//------------------------------------------------------
+//declaring conditions for input field
+//------------------------------------------------------
+function inputField(){
+    
+    if(userName.value == null || userName.value == undefined || userName.value.length < 3){
+        alert("Enter Valid Name");
+        return false;
+    }
+    if(mobile.value == null || mobile.value == undefined || mobile.value.length < 10){
+        alert("Mobile is Mandatory");
+        return false;
+    }
+    var emailValue = email.value;
+    var emailSplit = emailValue.split('@')
+    if(emailSplit.length < 2){
+        alert("Enter valid Email Address");
+        return false;
+    }else{
+        var emailName = emailSplit[0];
+        var emailDomain = emailSplit[1];
+        if(emailName.length < 1 || emailDomain.length < 1){
+            alert ("Enter Valid Email");
+            return false;
+        }else{
+            var domainSplit = emailDomain.split('.')
+            if(domainSplit.length < 2){
+                alert ("Enter Valid Email");
+                return false;
+            }else{
+                 emailValue;
+            }
+        }
+    }
+    if(country.value == null || country.value == undefined || country.value.length ==""){
+        alert("Country Should not be Empty");
+        return false;
+    }
+    if(gender.value == null || gender.value == undefined || gender.value.length == 0){
+        alert("Gender is Mandatory");
+        return false;
+    }
+    if(address.value == null || address.value == undefined || address.value.length ==""){
+        alert("Address Should not be Empty");
+        return false;
+    }
+    if(pincode.value == null || pincode.value == undefined || pincode.value.length == ""){
+        alert("Pincode is Mandatory");
+        return false;
+    }
+    if(college.value == null || college.value == undefined || college.value.length ==""){
+        alert("College Should not be Empty");
+        return false;
+    }
+    if(degree.value == null || degree.value == undefined || degree.value.length == 0){
+        alert("Degree is Mandatory");
+        return false;
+    }
+    if(score.value == null || score.value == undefined || score.value.length ==""){
+        alert("Score Should not be Empty");
+        return false;
+    }
+    if(skills.value == null || skills.value == undefined || skills.value.length ==""){
+        alert("Skills Should not be Empty");
+        return false;
+    }
+    if(password.value == null || password.value == undefined || password.value.length ==""){
+        alert("Password Should not be Empty");
+        return false;
+    }
+
+    var passwordValue,char,lcase,ucase,number,nameSplit,charSplit,lcaseSplit,ucaseSplit,numSplit;
+    passwordValue = password.value;
+    char = '!@#$%^&*()_+-';
+    lcase = 'qwertyuioplkjhgfdsazxcvbnm';
+    ucase = 'QWERTYUIOPLKJHGFDSAZXCVBNM';
+    number = '1234567890';
+    
+    passSplit = passwordValue.split('');
+    charSplit = char.split('');
+    lcaseSplit = lcase.split('');
+    ucaseSplit = ucase.split('');
+    numSplit = number.split('');
+    
+    if(passwordValue.length<8){
+        alert('Password should contain 8 Letters');
+        return false;
+    }
+    var checkChar = false;
+    for(i=0;i<charSplit.length;i++){
+        if(passSplit.includes(charSplit[i])){
+            checkChar = true;
+            break;
+        }
+    }
+    if(!checkChar){
+        alert('Password Must Contain one char');
+        return false;
+    }
+    var checkNum = false;
+    for(i=0;i<numSplit.length;i++){
+        if(passSplit.includes(numSplit[i])){
+            checkNum = true;
+            break;
+        }
+    }
+    if(!checkNum){
+        alert('Password Must Contain one number');
+        return false;
+    }
+    var checkLcase = false;
+    for(i=0;i<lcaseSplit.length;i++){
+        if(passSplit.includes(lcaseSplit[i])){
+            checkLcase = true;
+            break;
+        }
+    }
+    if(!checkLcase){
+        alert('Password Must Contain one Lower Case');
+        return false;
+    }
+    var checkUcase = false;
+    for(i=0;i<ucaseSplit.length;i++){
+        if(passSplit.includes(ucaseSplit[i])){
+            checkUcase = true;
+            break;
+        }
+    }
+    if(!checkUcase){
+        alert('Password Must Contain one Upper Case');
+        return false;
+    }
+}
