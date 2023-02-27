@@ -1,5 +1,5 @@
 
-@media only screen and (max-width:1380px){
+/* @media only screen and (max-width:1380px){
     svg{
         width: 200px;
         height: 200px;
@@ -9,16 +9,17 @@
         font-size: 380%;
         left: 2%;
     }
-}
+} */
 @media only screen and (max-width:1200px){
     svg{
         width: 180px;
         height: 180px;
-        top: 25%;
+        top: 100px;
        
     }
     h1{
         font-size: 350%;
+        left:40px;
     }
 }
 @media only screen and (max-width:770px){
