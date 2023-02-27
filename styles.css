@@ -9,14 +9,14 @@ h1,svg{
 }
 h1{
     font-size: 400%;
-    top: 50%;
-    left: 5%;
+    top: 345px;
+    left: 80px;
 }
 svg{
     width: 200px;
     height: 200px;
-    top: 24%;
-    left: 9%;
+    top: 170px;
+    left: 120px;
 }
 html,body{
     height: 100%;
