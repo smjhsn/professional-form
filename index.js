@@ -14,12 +14,12 @@ function loadTable(){
     tbody.innerHTML = "";
     myArray.forEach(object =>{
         tbody.insertAdjacentHTML("beforeend",
-        '<tr><td>'+object.name+'</td><td>'+object.password+'</td><td>'+object.mobile+'</td><td>'+object.email+'</td>'+
-        '<td>'+object.country+'</td><td>'+object.gender+'</td><td>'+object.address+'</td><td>'+object.pincode+'</td>'+
-        '<td>'+object.college+'</td><td>'+object.degree+'</td><td>'+object.score+'</td><td>'+object.position+'</td>'+
-        '<td>'+object.skills+'</td>'+
-        '<td><button class="edit" onclick="edit('+object.userId+')">Edit</button></td>'+
-        '<td><button class="delete" onclick="del('+object.userId+')">Del</button></td></tr>')
+        '<tr><td data-label="User Id">'+object.userId+'</td><td data-label="User Name">'+object.name+'</td><td  data-label="Password">'+object.password+'</td><td data-label="Mobile No">'+object.mobile+'</td><td data-label="Email">'+object.email+'</td>'+
+        '<td data-label="Country">'+object.country+'</td><td data-label="Gender">'+object.gender+'</td><td data-label="Address">'+object.address+'</td><td data-label="Pincode">'+object.pincode+'</td>'+
+        '<td data-label="College">'+object.college+'</td><td data-label="Degree">'+object.degree+'</td><td data-label="Score">'+object.score+'</td><td data-label="Position">'+object.position+'</td>'+
+        '<td data-label="Skills">'+object.skills+'</td>'+
+        '<td ><button class="edit" onclick="edit('+object.userId+')">Edit</button></td>'+
+        '<td><button class="delete" onclick="del('+object.userId+')">Del</button></td></tr>'')
     })
 }
 //declaring the variables for selected fields
