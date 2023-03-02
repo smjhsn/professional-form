@@ -22,6 +22,36 @@
         left:40px;
     }
 }
+@media only screen and (max-width:800px){
+    .table th{
+        display: none;
+    }
+    .table,.table tbody,.table tr,.table td{
+        display: block;
+        width: 100%;
+    }
+    .table tbody tr{
+        margin-bottom: 50px;
+    }
+    .table tbody tr td{
+        text-align: right;
+        padding-left: 50%;
+        position:relative;
+    }
+    .table td::before{
+        content: attr(data-label);
+        text-align: left;
+        position: absolute;
+        left: 0;
+        width: 50%;
+        font-weight: bold;
+        padding-left: 15px;
+    }
+    .edit,.delete{
+        width: 100px;
+        padding: 3px;
+    }
+}
 @media only screen and (max-width:770px){
     .skills-row{
         margin-top: 15px;
